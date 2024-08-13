@@ -20,14 +20,16 @@ if (isset($_POST)) {
 
 
 
-	$stmt = $conn->prepare("INSERT INTO job_post(id_company, jobtitle, description, minimumsalary, minimummarks, experience, qualification) VALUES (?,?, ?, ?, ?, ?, ?)");
+	$stmt = $conn->prepare("INSERT INTO job_post(id_company, jobtitle, description, minimumsalary, minimummarks, streams, experience, qualification) VALUES (?,?, ?, ?, ?, ?, ?, ?)");
 
-	$stmt->bind_param("issssss", $_SESSION['id_company'], $jobtitle, $description, $minimumsalary, $minimummarks, $experience, $qualification);
+	$stmt->bind_param("isssssss", $_SESSION['id_company'], $jobtitle, $description, $minimumsalary, $minimummarks, $streams, $experience, $qualification);
 
 	$jobtitle = mysqli_real_escape_string($conn, $_POST['jobtitle']);
 	$description = mysqli_real_escape_string($conn, $_POST['description']);
 	$minimumsalary = mysqli_real_escape_string($conn, $_POST['minimumsalary']);
 	$minimummarks = mysqli_real_escape_string($conn, $_POST['minimummarks']);
+	$streams = mysqli_real_escape_string($conn, $_POST['streams']);
+
 	$experience = mysqli_real_escape_string($conn, $_POST['experience']);
 	$qualification = mysqli_real_escape_string($conn, $_POST['qualification']);
 	

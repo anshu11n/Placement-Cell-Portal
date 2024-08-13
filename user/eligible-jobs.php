@@ -89,7 +89,7 @@ require_once("../db.php");
 
               <!-- // Step 1: Extract the 'ug' value from the 'users' table for the current user -->
               <?php
-                $sql = "SELECT ug FROM users WHERE id_user='$_SESSION[id_user]'";
+                $sql = "SELECT ug, stream FROM users WHERE id_user='$_SESSION[id_user]'";
 
                 // Execute the query
                 $result = $conn->query($sql);
@@ -101,14 +101,16 @@ require_once("../db.php");
 
                     // Store the 'ug' value in a variable
                     $ugValue = $row['ug'];
-                    // echo $ugValue;
+                    $userStream = $row['stream'];
+                    // echo $userStream;
 
                     // Step 2: Query to find jobs where 'minimummarks' is greater than or equal to the 'ug' value
-                    $jobQuery = "SELECT * FROM job_post WHERE minimummarks <= '$ugValue'";
-                    // echo $jobQuery;
+                    $jobQuery = "SELECT * FROM job_post WHERE minimummarks <= '$ugValue' AND FIND_IN_SET('$userStream', streams) > 0";
 
                     // Execute the job query
                     $jobResult = $conn->query($jobQuery);
+
+                    // echo $jobResult->num_rows;
 
                     // Check if any jobs match the criteria
                     if ($jobResult->num_rows > 0) {

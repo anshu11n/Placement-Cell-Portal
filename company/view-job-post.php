@@ -117,7 +117,10 @@ require_once("../db.php");
                       <div class="clearfix"></div>
                       <hr>
                       <div>
-                        <p><span class="margin-right-10"><i class="fa fa-location-arrow text-green"> Role: </i> <?php echo $row['experience']; ?> </span><span class="margin-right-10"> <i class="fa fa-money text-green"> CTC:</i> <?php echo "Rs " . $row['minimumsalary'] . "    "; ?></span> <span class="margin-right-10"><i class="fa fa-calendar text-green"> Drive Date:</i> <?php echo date("d-M-Y", strtotime($row['createdat'])); ?></span><span class="margin-right-10"><i class="fa fa-location-calendar text-green"> Eligibility / Minimum Marks: </i> <?php echo $row['minimummarks'] . "%"; ?> </span></p>
+                        <p><span class="margin-right-10"><i class="fa fa-location-arrow text-green"> Role: </i> <?php echo $row['experience']; ?> </span><span class="margin-right-10"> <i class="fa fa-money text-green"> CTC:</i> <?php echo "Rs " . $row['minimumsalary'] . "    "; ?></span> <span class="margin-right-10"><i class="fa fa-calendar text-green"> Drive Date:</i> <?php echo date("d-M-Y", strtotime($row['createdat'])); ?></span><span class="margin-right-10"><i class="fa fa-location-calendar text-green"> Eligibility / Minimum Marks: </i> <?php echo $row['minimummarks'] . "%"; ?> </span> 
+                        <br>
+                        <span class="margin-right-10"><i class="fa fa-location-calendar text-green"> Streams Allowed: : </i> <?php echo $row['streams']; ?> </span>
+                      </p>
                         <!-- Years Experience -->
                       </div>
                       <div>

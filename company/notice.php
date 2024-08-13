@@ -71,7 +71,6 @@ require_once("../db.php");
                                                 <th>Attachment</th>
 
 
-
                                                 <th>Date and Time</th>
                                             </tr>
                                         </thead>

@@ -106,6 +106,11 @@ require_once("../db.php");
                       <input type="number" class="form-control  input-lg" id="minimummarks" name="minimummarks" placeholder="Eligibility Criteria/Minimum Marks" required="">
                     </div>
                     <div class="form-group">
+                      <label>Streams Allowed: (Please write comma seperated (no gaps) select among CSE,AIDS,PH,MnC,CB,CE,ME,MME)</label>
+                      <input class="form-control input-lg" type="text" id="streams" name="streams" placeholder="Streams Allowed:">
+        
+                    </div>
+                    <div class="form-group">
                       <input class="form-control  input-lg" id="experience" autocomplete="off" name="experience" placeholder="Role/Experience" required="">
                     </div>
                     <div class="form-group">
@@ -114,9 +119,6 @@ require_once("../db.php");
 
 
                     <!-- adding image to drive post  -->
-
-
-
 
                     <div class="form-group">
                       <button type="submit" class="btn btn-flat btn-success">Create</button>
@@ -158,3 +160,4 @@ require_once("../db.php");
 </body>
 
 </html>
+
