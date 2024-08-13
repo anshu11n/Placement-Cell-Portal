@@ -140,7 +140,8 @@ require_once("../db.php");
                               <p class="text-gray-600 mt-2"><strong>Minimum Marks:</strong> <?php echo $jobRow['minimummarks']; ?></p>
                               <p class="text-gray-600 mt-2"><strong>Qualification:</strong> <?php echo $jobRow['qualification']; ?></p>
                               <p class="text-gray-600 mt-2"><strong>Job Post ID:</strong> <?php echo $jobRow['id_jobpost']; ?></p>
-
+                              <p class="text-gray-600 mt-2"><strong>Eligible Branch:</strong> <?php echo $jobRow['streams']; ?></p>
+                              
                               <?php
                               // Check if the user has already applied for this job
                               $checkQuery = "SELECT id_apply FROM apply_job_post WHERE id_jobpost = " . $jobRow['id_jobpost'] . " AND id_company = " . $jobRow['id_company'] . " AND id_user = " . $_SESSION['id_user'];
