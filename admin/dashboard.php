@@ -229,7 +229,7 @@ require_once("../db.php");
 
                     $result = $conn->query($sql);
                   ?>
-                  
+
                     <div><h1>Companies in 2024</h1></div>
                     <table class="table">
                         <thead>
@@ -254,7 +254,7 @@ require_once("../db.php");
                         <?php
                         }
                     } else {
-                        echo "<tr><td colspan='4'>No job posts available for the year 2024</td></tr>";
+                        echo "<tr><td colspan='4'>No job posts are available for the year 2024</td></tr>";
                     }
                     ?>
 
