@@ -79,7 +79,8 @@ require_once("../db.php");
 
                                             <?php
 
-                                            $sql = "SELECT * FROM notice ";
+                                            // $sql = "SELECT * FROM notice ";
+                                            $sql = "SELECT * FROM notice where audience='Co-ordinators'";
 
                                             $result = $conn->query($sql);
 
@@ -93,7 +94,7 @@ require_once("../db.php");
                                                     <?php if ($row['resume'] != '') { ?>
                                                         <td><a href="../uploads/resume/<?php echo $row['resume']; ?>" download="<?php echo 'Notice'; ?>"><i class="fa fa-file"></i></a></td>
                                                     <?php } else { ?>
-                                                        <td>No Resume Uploaded</td>
+                                                        <td>No Attachment</td>
                                                     <?php } ?>
 
                                                     <td><?php echo $row['date']; ?></td>

@@ -41,6 +41,9 @@ if (isset($_POST)) {
 		$resumeFileType = pathinfo($base, PATHINFO_EXTENSION);
 
 		$file = uniqid() . "." . $resumeFileType;
+		// echo $file;
+		// $_SESSION['file_debug'] = $file;
+		// echo $resumeFileType;
 
 		$filename = $folder_dir . $file;
 
@@ -64,7 +67,7 @@ if (isset($_POST)) {
 		}
 	} else {
 		$uploadOk = false;
-	}
+	} 
 
 
 
@@ -76,6 +79,7 @@ if (isset($_POST)) {
 	}
 
 	$sql .= " WHERE id_user='$_SESSION[id_user]'";
+
 
 	if ($conn->query($sql) === TRUE) {
 		$_SESSION['name'] = $firstname . ' ' . $lastname;

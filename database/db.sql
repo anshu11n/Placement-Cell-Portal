@@ -178,6 +178,7 @@ CREATE TABLE notice (
   id int(11) NOT NULL AUTO_INCREMENT,
   subject varchar(250) NOT NULL,
   notice varchar(255) DEFAULT NULL,
+  resume varchar(255) DEFAULT NULL,
   audience varchar(255) DEFAULT NULL,
   date datetime DEFAULT NULL,
   UNIQUE KEY id (id)
